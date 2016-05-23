@@ -1,0 +1,13 @@
+language: bash
+services: docker
+
+install:
+  - git clone https://github.com/valtlfelipe/docker-mongo
+
+before_script:
+  - cd docker-mongo
+script:
+  - docker build -t valtlfelipe/mongo .
+
+after_script:
+  - docker images
